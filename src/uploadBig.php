@@ -34,7 +34,7 @@ $fp = fopen($file, 'rb');
 $i = 1;
 
 $part_info = array();
-$piece_size = 1024 * 512;
+$piece_size = 1024 * 1024 * 2;
 
 while (!feof($fp)) {
 	$udata = SCS::inputResourceMultipart($fp, $piece_size , $uploadId, $i);
