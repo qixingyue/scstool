@@ -2,7 +2,8 @@
 
 $len = count($argv);
 if($len < 2) {
-	exit("Params error\n");
+	help();
+	exit();
 }
 
 $opt = $argv[1];
@@ -17,8 +18,12 @@ if($opt == "listfile") {
 } else if($opt == "delete") {
 	include "delete.php";
 } else {
+	help();
+} 
+
+function help(){
 	echo "scs.phar upload <file> \n";
 	echo "         uploadBig <file> \n";
 	echo "         listfile\n";
 	echo "         delete <file>\n";
-} 
+}
