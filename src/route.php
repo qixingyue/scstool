@@ -4,6 +4,7 @@
 $len = count($argv);
 if($len < 2) {
 	help();
+	echo "\n";
 	exit();
 }
 
