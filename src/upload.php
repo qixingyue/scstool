@@ -21,4 +21,9 @@ if(!file_exists($uploadFile)) {
 $scs = new SCS(AccessKey, SecretKey);
 $bucketName = BUCKETNAME;
 $m = $scs->putObjectFile($uploadFile, $bucketName, PREFIX . baseName($uploadFile), SCS::ACL_PUBLIC_READ);
-var_dump($m);
+
+if($m == true) {
+	echo "UPLOAD OK ! \n";
+} else {
+	echo "UPLOAD FAILED ! \n";
+}

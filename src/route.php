@@ -1,3 +1,4 @@
+
 <?php
 
 $len = count($argv);
@@ -30,3 +31,5 @@ function help(){
 	echo "         delete <file>\n";
 	echo "         download <file> <ttl>\n";
 }
+
+echo "\n";

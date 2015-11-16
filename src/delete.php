@@ -13,4 +13,9 @@ $bucketName = BUCKETNAME ;
 date_default_timezone_set('UTC');
 $scs = new SCS(AccessKey, SecretKey);
 $m = $scs->deleteObject($bucketName,$argv[1]);
-var_dump($m);
+
+if($m) {
+	echo "DELETE FINISHED \n";
+} else {
+	echo "DELETE FAILED\n";
+}

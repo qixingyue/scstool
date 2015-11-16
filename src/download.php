@@ -14,4 +14,7 @@ $scs = new SCS(AccessKey, SecretKey);
 $uploadFile = $argv[1];
 $bucketName = BUCKETNAME;
 $obj = SCS::getAuthenticatedURL($bucketName,$uploadFile,$ttl);
+
+echo "DOWNLOAD URL IS : \n";
+
 echo $obj . "\n";
