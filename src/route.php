@@ -17,6 +17,8 @@ if($opt == "listfile") {
 	include "uploadBig.php";
 } else if($opt == "delete") {
 	include "delete.php";
+} else if($opt == "download") {
+	include "download.php";
 } else {
 	help();
 } 
@@ -26,4 +28,5 @@ function help(){
 	echo "         uploadBig <file> \n";
 	echo "         listfile\n";
 	echo "         delete <file>\n";
+	echo "         download <file> <ttl>\n";
 }
