@@ -9,6 +9,10 @@ if(count($argv) <= 1 )  {
 }
 
 $uploadFile = $argv[1];
+
+$uploadFile = realpath($uploadFile);
+
+echo "Upload ". $uploadFile . "\n";
 if(!file_exists($uploadFile)) {
 	echo "FILE NOT EXIST\n";
 	exit();
