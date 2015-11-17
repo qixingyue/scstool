@@ -47,9 +47,10 @@ while (!feof($fp)) {
 			'PartNumber' => $i,
 			'ETag' => $res['hash'],
 		);
-		$i++;
 		$uploadSize += strlen($udata['data']);
-		echo 'Part: ' . $i . " $uploadSize / $realsize  OK \n";
+		$percent = round($uploadSize / $realsize * 100 );
+		echo 'Part: ' . $i . " $uploadSize / $realsize = $percent% OK \n";
+		$i++;
 	} else {
 		fseek($fp, - strlen($udata['data']) , SEEK_CUR);	
 	} 
