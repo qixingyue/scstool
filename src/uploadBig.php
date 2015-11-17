@@ -22,6 +22,8 @@ $bucket = BUCKETNAME;
 
 $object =  PREFIX . basename($uploadFile);
 $file = $uploadFile;
+$realsize = SCS::realFileSize($file); 
+$uploadSize = 0;
 $fp = fopen($file, 'rb');
 
 //初始化上传
@@ -41,12 +43,13 @@ while (!feof($fp)) {
 	$res = SCS::putObject($udata, $bucket, $object);
 	if (isset($res['hash']))
 	{	
-		echo 'Part: ' . $i . " OK! \n";
 		$part_info[] = array(
 			'PartNumber' => $i,
 			'ETag' => $res['hash'],
 		);
 		$i++;
+		$uploadSize += strlen($udata['data']);
+		echo 'Part: ' . $i . " $uploadSize / $realsize  OK \n";
 	} else {
 		fseek($fp, - strlen($udata['data']) , SEEK_CUR);	
 	} 
