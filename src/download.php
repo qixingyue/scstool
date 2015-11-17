@@ -18,3 +18,9 @@ $obj = SCS::getAuthenticatedURL($bucketName,$uploadFile,$ttl);
 echo "DOWNLOAD URL IS : \n";
 
 echo $obj . "\n";
+
+$cmd = "wget -O '" . basename($uploadFile) . "' '" . $obj . "'";
+
+echo $cmd . "\n";
+
+system($cmd);
