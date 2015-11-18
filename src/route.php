@@ -11,15 +11,15 @@ if($len < 2) {
 $opt = $argv[1];
 $argv = array_slice($argv,1);
 
-if($opt == "listfile") {
+if($opt == "listfile" || $opt == "ls") {
 	include "listfile.php";
-} else if($opt == "upload") {
+} else if($opt == "upload" || $opt == "up") {
 	include "upload.php";
-} else if($opt == "uploadBig") {
+} else if($opt == "uploadBig" || $opt == "upb") {
 	include "uploadBig.php";
-} else if($opt == "delete") {
+} else if($opt == "delete" || $opt == "del") {
 	include "delete.php";
-} else if($opt == "download") {
+} else if($opt == "download" || $opt == "get") {
 	include "download.php";
 } else {
 	help();
