@@ -8,5 +8,6 @@ $bucketName = BUCKETNAME;
 $contents = $scs->getBucket($bucketName,PREFIX);
 
 foreach($contents as $file){
-	echo $file['name'] . "\n";
+	//var_dump($file);
+	echo str_pad($file['name'], 64 ,".") . $file['size'] .  "\n";
 }
