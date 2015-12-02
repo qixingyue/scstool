@@ -1,5 +1,7 @@
 This is an scs tool to transfer your own file to scs use command line.
 
+https://github.com/SinaCloudStorage/SinaCloudStorage-SDK-PHP
+
 * You Need A SCS ACCOUNT . 
 http://www.sinacloud.com/scs.html
 
