@@ -19,7 +19,13 @@ echo "DOWNLOAD URL IS : \n";
 
 echo $obj . "\n";
 
-$cmd = "wget -O '" . basename($uploadFile) . "' '" . $obj . "'";
+$cmd = "wget ";
+
+if(isset($_SERVER['scsget'])) {
+	$cmd = $_SERVER['scsget'] ;
+}
+
+$cmd = "$cmd -O '" . basename($uploadFile) . "' '" . $obj . "'";
 
 echo $cmd . "\n";
 
