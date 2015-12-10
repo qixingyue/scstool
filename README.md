@@ -25,3 +25,6 @@ if(!defined("MYCONFIG_H")) {
 * Run php package.php
 
 * Copy you phar file to your bin dir
+
+*	Also You can replace your wget dir . 
+	SET YOUR ENV export scsget="quickget " , " -O filename <URL>" will be added to the Command .
