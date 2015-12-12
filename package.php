@@ -15,3 +15,7 @@ $defaultStub = $phar->createDefaultStub('route.php');
 $stub = "#!/usr/bin/env php\n".$defaultStub;
 $phar->setStub($stub);
 $phar->stopBuffering();
+
+if(isset($argv[1]) && $argv[1] == "install") {
+	system("cp scstool.phar ~/bin/");
+}
