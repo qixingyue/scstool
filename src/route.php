@@ -1,5 +1,27 @@
-
 <?php
+
+$g_run_time = array();
+
+$run_time_file = "/tmp/scstools.runtime";
+
+if(file_exists($run_time_file)){
+	$g_run_time = unserialize(file_get_contents($run_time_file));
+}
+
+function save_run_time($k,$v){
+	global $g_run_time;
+	$g_run_time[$k] = $v;
+}
+
+function k_run_time($k){
+	global $g_run_time;
+	return isset($g_run_time[$k]) ? $g_run_time[$k] : false;
+}
+
+function final_run_time(){
+	global $g_run_time,$run_time_file;
+	file_put_contents($run_time_file,serialize($g_run_time));
+}
 
 $len = count($argv);
 if($len < 2) {
@@ -36,4 +58,5 @@ function help(){
 	echo "         tmp <file> <ttl>\n";
 }
 
+final_run_time();
 echo "\n";
